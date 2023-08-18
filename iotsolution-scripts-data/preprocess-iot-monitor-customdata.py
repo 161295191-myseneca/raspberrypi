@@ -175,12 +175,12 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
  
 #	  // check for payload  'uid=subject.reference,filter:resourceType=MedicationAdministration,payload=payload.payload~\
 
-     jsoncriteria='uid=metadata.dsn,filter:allrecords~\
-subtopics=metadata.property_name~\
-values=datapoint.value~\
-identifiers=metadata.display_name~\
-datetime=datapoint.updated_at~\
-msgid=datapoint.id~\
+     jsoncriteria='uid=model,filter:allrecords~\
+subtopics=year~\
+values=manufacturer~\
+identifiers=mileage~\
+datetime=engine~\
+msgid=transmission~\
 latlong=lat:long'     
 
 #     jsoncriteria='uid=entry.0.resource.id,filter:allrecords~\
@@ -202,7 +202,7 @@ latlong=lat:long'
      identifier = "IoT device performance and failures"
 
      # if dataage - use:dataage_utcoffset_timetype
-     preprocesslogic='anomprob,trend,avg'
+     preprocesslogic='anomprob,trend,avg,min.max'
      #preprocesslogic='dataage_-4_day,trend,min,max' # millisecond,second,minute,hour,day
      #preprocesslogic='dataage_-4_hour' # millisecond,second,minute,hour,day
 #     preprocesslogic='dataage_1_minute' # millisecond,second,minute,hour,day
